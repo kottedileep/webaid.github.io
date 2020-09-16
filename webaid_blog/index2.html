@@ -1,0 +1,144 @@
+
+<htmL>
+<head>
+<script>
+function health()
+{
+	var name = document.getElementById("name").value;
+	var oxygen = document.getElementById("oxygen").value;
+	var age = document.getElementById("age").value;
+	var weight =document.getElementById("weight").value;
+	var sugar = document.getElementById("sugar").value;
+	var bp = document.getElementById("bp").value;
+  var surgery=document.getElementById("surgery").value;
+  var water=document.getElementById("water").value;
+  var sleep=document.getElementById("sleep").value;
+	var x=10;
+	if (name=="")
+	{
+		alert("Please enter your name.");
+		name.focus();
+		return false;
+	}
+  else {
+    document.getElementById('display').innerHTML="-------------RESULT -------------------"
+    document.getElementById('display1').innerHTML="HI   " +name;
+		x-=1;
+  }
+
+	if (oxygen<90)
+	{
+		document.getElementById('display2').innerHTML="You Have Less Spo2 Value " + oxygen;
+		x-=1;
+	}
+
+	if (age ==0)
+	{
+		window.alert("Please enter a age");
+	}
+
+	if (sugar>150)
+	{
+		document.getElementById('display3').innerHTML = "Take Care On Sugar Level";
+		x-=1;
+	}
+
+	if (bp<90 || bp>140)
+	{
+document.getElementById('display4').innerHTML="Take Care About BP Level";
+x-=1;
+	}
+	if (water < 4)
+	{
+		document.getElementById('display5').innerHTML = "You Want Drink 6 Liters";
+		x-=1;
+	}
+	if (surgery=="yes"){
+    document.getElementById('display6').innerHTML="Take Care On Covid 19";
+		x-=1;
+  }
+  if (sleep<7){
+    document.getElementById('display7').innerHTML="Mandatory To Sleep Atleast 7 Hours";
+  }
+	if (x>8){
+		document.getElementById('displa').innerHTML="GOOD HEALTH CONDITION";
+				document.getElementById('demo').innerHTML=x*10 + "OUT OF 100";
+	}
+	if(x>=5 && x<=8){
+		document.getElementById('displa').innerHTML="AVERAGE HEALTH CONDITION";
+				document.getElementById('demo').innerHTML=x*10 + "OUT OF 100";
+	}
+	if(x<5){
+		document.getElementById('displa').innerHTML="BAD HEALTH CONDITION";
+				document.getElementById('demo').innerHTML="YOU SCORED " +x*10 + " OUT OF 100 on Health Test";
+	}
+}
+</script>
+
+<style>
+body{
+  background-color: gray;
+}
+
+.rightcard{
+    float:right;
+	text-align: center;
+	border: 3px solid yellow;
+	text-decoration: underline;
+	background-color: lightgreen;
+}
+div {
+	box-sizing: border-box;
+	width: 100%;
+	border: 100px solid black;
+	float: left;
+	align-content: center;
+	align-items: center;
+}
+
+form {
+	margin: 0 auto;
+	width: 600px;
+}
+</style>
+</head>
+
+<body>
+<h1 style="text-align: center"> Health Validation Form </h1>
+<div class="bigcard">
+<div class="leftcard">
+<form name='write' onsubmit='return health(this);'>
+	<p>Name: <input type="text" id="name" name="Name"> </p><br>
+  <p>Oxygen Satuaration(spo2):<input type="number" name="oxygen" id="oxygen"></p>
+	<p> Age: <input type="number" size=65 name="Age" id="age"> </p><br>
+  <p>Weight: <input type="number" name="weight" id="weight"></p><br>
+	<p>Sugar Level : <input type="number" id="sugar" name="sugar"> </p><br>
+	<p>Blood Pressure: <input type="float" id="bp" name="bp"> </p><br>
+	<p>Any Surgery Experience: <input type="text" id="surgery" name="surgery"> </p><br>
+	<p>Drinking of water per day :
+		<select type="number" id="water" name="water">
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+		</select></p><br><br>
+  <p>Sleep per day :<input type="number" id="sleep" name="sleep"></p>
+</form>
+<input style="float:center;" type="submit" onclick="health();">
+</div>
+<div class="rightcard">
+	<h2 style="color:white;" id="display"></h2>
+	<h3 style="color:black;" id="displa"></h3>
+	<h3 style="color:white;" id="demo"></h3>
+<p><span id='display1'></span></p>
+<p><span id='display2'></span></p>
+<p><span id='display3'></span></p>
+<p><span id='display4'></span></p>
+<p><span id='display5'></span></p>
+<p><span id='display6'></span></p>
+<p><span id='display7'></span></p>
+</div>
+</div>
+</body>
+</html>

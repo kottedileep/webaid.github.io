@@ -1,0 +1,35 @@
+.class1{
+  border: 2px solid black;
+  color: red;
+  text-align: center;
+  background-color:powderblue;
+  padding: inherit;
+}
+.class2 h3{
+  border: 1px solid black;
+  color: blue;
+  text-align: center;
+  padding: inherit;
+  background-color: yellow;
+}
+.class2 img{
+width: 220px;
+height: 220px;
+float: left;
+padding: 40px;
+}
+.class3 h3{
+  border: 1px solid black;
+  color: blue;
+  text-align: center;
+  float: left;
+  padding: inherit;
+  width: 1324px;
+  background-color: yellow;
+}
+.class3 img{
+  width: 220px;
+  height: 220px;
+  float: left;
+  padding: 40px;
+}
